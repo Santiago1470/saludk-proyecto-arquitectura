@@ -22,10 +22,10 @@ Su objetivo es digitalizar la atención médica, garantizando seguridad, eficien
 ## 🧱 **Arquitectura y Tecnologías**
 
 - **Frontend:** React.js  
-- **Backend:** ASP.NET Core (C#)  
+- **Backend:** Spring Boot (Java)  
 - **Base de datos:** SQL Server  
 - **Autenticación:** JWT (JSON Web Tokens)  
-- **Arquitectura:** API RESTful basada en microservicios  
+- **Arquitectura:** API RESTful  
 - **Notificaciones:** comunicación asíncrona (colas de mensajería)  
 
 ---
