@@ -1,7 +1,7 @@
 CREATE TABLE usuario (
-  id_usuario INT PRIMARY KEY AUTO_INCREMENT,
-  nombre VARCHAR(100),
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(100) NOT NULL,
   correo VARCHAR(150) UNIQUE,
-  password VARCHAR(255),
+  password VARCHAR(255) NOT NULL,
   rol VARCHAR(30)
 );
