@@ -1,5 +1,6 @@
 package com.saludk.api.infra.security;
 
+import com.saludk.api.domain.usuario.UsuarioRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -30,7 +31,7 @@ public class SecurityFilter extends OncePerRequestFilter {
             if(subject != null){
                 var usuario = usuarioRepository.findByLogin(subject);
                 var authentication = new UsernamePasswordAuthenticationToken(usuario, null,
-                        usuario.getAuthorize());
+                        usuario.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         }
