@@ -21,7 +21,7 @@ public class HistorialMedicoService {
     private PacienteRepository pacienteRepository;
 
     @Autowired
-    private NotificacionService notificacionService; // ← Observador concreto
+    private Observador notificacionService;
 
     public HistorialMedico registrarEvento(Long idPaciente, TipoEvento tipo, String descripcion, String resultados, boolean valorCritico, String medicoResponsable) {
 
