@@ -3,6 +3,7 @@ package com.saludk.api.controller;
 import com.saludk.api.application.historial.HistorialMedicoService;
 import com.saludk.api.domain.historial.HistorialMedico;
 import com.saludk.api.domain.historial.TipoEvento;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/historial")
+// @SecurityRequirement(name = "bearer-key")
 public class HistorialMedicoController {
 
     @Autowired

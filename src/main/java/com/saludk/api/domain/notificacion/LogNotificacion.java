@@ -14,8 +14,8 @@ public class LogNotificacion {
     private Long idLog;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_alerta", nullable = false)
-    private HistorialMedico historialMedico;  // 🔗 relación directa
+    @JoinColumn(name = "id_historial", nullable = false)
+    private HistorialMedico historialMedico;
 
     @Column(name = "canal", length = 50)
     private String canal;
