@@ -3,7 +3,7 @@ package com.saludk.api.controller;
 import com.saludk.api.application.paciente.PacienteService;
 import com.saludk.api.application.registro.RegistroPacienteFacade;
 import com.saludk.api.domain.paciente.Paciente;
-import com.saludk.api.domain.paciente.dto.DatosRegistroPaciente;
+import com.saludk.api.domain.paciente.DatosRegistroPaciente;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

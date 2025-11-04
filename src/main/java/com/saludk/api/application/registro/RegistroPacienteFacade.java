@@ -3,7 +3,7 @@ package com.saludk.api.application.registro;
 import com.saludk.api.application.paciente.PacienteService;
 import com.saludk.api.application.usuario.UsuarioService;
 import com.saludk.api.domain.paciente.Paciente;
-import com.saludk.api.domain.paciente.dto.DatosRegistroPaciente;
+import com.saludk.api.domain.paciente.DatosRegistroPaciente;
 import com.saludk.api.domain.usuario.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
