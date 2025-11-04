@@ -48,16 +48,24 @@ public class HistorialMedico extends Sujeto {
     public void setValorCritico(Boolean valorCritico) {
         this.valorCritico = valorCritico;
         if (Boolean.TRUE.equals(valorCritico)) {
-            notificarObservadores("Valor crítico detectado en el historial del paciente "
-                    + paciente.getId() + " (" + tipoAlerta + ")");
+            Long idPaciente = (paciente != null) ? paciente.getId() : null;
+            notificarObservadores(
+                    "Valor crítico detectado en el historial del paciente " + idPaciente,
+                    this
+            );
         }
     }
 
-    public void registrarEvento(String descripcion) {
+    public void registrarEvento(String descripcion, HistorialMedico historialMedico) {
         this.descripcion = descripcion;
-        notificarObservadores("Nuevo evento registrado para paciente " + paciente.getId() + ": " + descripcion);
+        Long idPaciente = (paciente != null) ? paciente.getId() : null;
+        notificarObservadores(
+                "Nuevo evento registrado para paciente " + idPaciente + ": " + descripcion,
+                historialMedico
+        );
     }
 
+    // Getters y setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public Paciente getPaciente() { return paciente; }
@@ -74,6 +82,7 @@ public class HistorialMedico extends Sujeto {
     public void setMedicoResponsable(String medicoResponsable) { this.medicoResponsable = medicoResponsable; }
     public String getArchivoUrl() { return archivoUrl; }
     public void setArchivoUrl(String archivoUrl) { this.archivoUrl = archivoUrl; }
+    public Boolean getValorCritico() { return valorCritico; }
     public String getTipoAlerta() { return tipoAlerta; }
     public void setTipoAlerta(String tipoAlerta) { this.tipoAlerta = tipoAlerta; }
 }

@@ -1,5 +1,7 @@
 package com.saludk.api.domain.observer;
 
+import com.saludk.api.domain.historial.HistorialMedico;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +17,9 @@ public abstract class Sujeto {
         observadores.remove(observador);
     }
 
-    protected void notificarObservadores(String mensaje) {
-        for (Observador observador : observadores) {
-            observador.actualizar(mensaje);
+    public void notificarObservadores(String mensaje, HistorialMedico historial) {
+        for (Observador obs : observadores) {
+            obs.actualizar(mensaje, historial);
         }
     }
 }

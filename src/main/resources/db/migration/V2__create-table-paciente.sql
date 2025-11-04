@@ -7,5 +7,5 @@ CREATE TABLE paciente (
   tipo_sangre VARCHAR(10),
   alergias TEXT,
   estado_registro VARCHAR(20),
-  FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+  FOREIGN KEY (id_usuario) REFERENCES usuario(id)
 );

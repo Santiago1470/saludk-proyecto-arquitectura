@@ -38,7 +38,7 @@ public class HistorialMedicoService {
 
         registro.agregarObservador(notificacionService);
 
-        registro.registrarEvento("Nuevo evento médico registrado: " + descripcion);
+        registro.registrarEvento("Nuevo evento médico registrado: " + descripcion, registro);
 
         if (valorCritico) {
             registro.setValorCritico(true);

@@ -1,6 +1,6 @@
 CREATE TABLE historial_medico (
-  id_historial INT PRIMARY KEY AUTO_INCREMENT,
-  id_paciente INT NOT NULL,
+  id_historial BIGINT PRIMARY KEY AUTO_INCREMENT,
+  id_paciente BIGINT NOT NULL,
   fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
   tipo_evento ENUM('CONSULTA', 'EXAMEN', 'MEDICAMENTO', 'ALERTA') NOT NULL,
   descripcion TEXT,
