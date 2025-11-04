@@ -4,6 +4,7 @@ import com.saludk.api.application.paciente.PacienteService;
 import com.saludk.api.application.registro.RegistroPacienteFacade;
 import com.saludk.api.domain.paciente.Paciente;
 import com.saludk.api.domain.paciente.DatosRegistroPaciente;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/pacientes")
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
 
     private final RegistroPacienteFacade registroPacienteFacade;

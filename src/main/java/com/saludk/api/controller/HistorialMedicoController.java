@@ -2,6 +2,7 @@ package com.saludk.api.controller;
 
 import com.saludk.api.application.historial.HistorialMedicoService;
 import com.saludk.api.domain.historial.HistorialMedico;
+import com.saludk.api.domain.historial.HistorialMedicoDTO;
 import com.saludk.api.domain.historial.TipoEvento;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/historial")
-// @SecurityRequirement(name = "bearer-key")
+@SecurityRequirement(name = "bearer-key")
 public class HistorialMedicoController {
 
     @Autowired
@@ -32,8 +33,11 @@ public class HistorialMedicoController {
     }
 
     @GetMapping("/paciente/{idPaciente}")
-    public ResponseEntity<List<HistorialMedico>> obtenerHistorialPorPaciente(@PathVariable Long idPaciente) {
-        List<HistorialMedico> historial = historialService.obtenerHistorialPorPaciente(idPaciente);
+    public ResponseEntity<List<HistorialMedicoDTO>> obtenerHistorialPorPaciente(@PathVariable Long idPaciente) {
+        var historial = historialService.obtenerHistorialPorPaciente(idPaciente)
+                .stream()
+                .map(HistorialMedicoDTO::from)
+                .toList();
         return ResponseEntity.ok(historial);
     }
 
