@@ -1,114 +1,124 @@
-package com.saludk.api.domain.paciente;
+package com.saludk.api.domain.usuario;
 
-import com.saludk.api.domain.usuario.Usuario;
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-@Entity(name = "Paciente")
-@Table(name = "paciente")
-public class Paciente {
+import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
+
+@Entity(name = "Usuario")
+@Table(name = "usuarios")
+public class Usuario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_paciente")
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id", nullable = false)
-    private Usuario usuario;
+    @Column(nullable = false)
+    private String nombre;
 
-    @Column(nullable = false, unique = true, length = 20)
-    private String cedula;
+    @Column(unique = true, nullable = false)
+    private String email;
 
-    @Column(length = 15)
-    private String telefono;
+    @Column(nullable = false)
+    private String clave;
 
-    @Column(length = 255)
-    private String direccion;
+    @Enumerated(EnumType.STRING)
+    private Rol rol;
 
-    @Column(name = "tipo_sangre", length = 10)
-    private String tipoSangre;
+    public Usuario() {}
 
-    @Column(columnDefinition = "TEXT")
-    private String alergias;
-
-    @Column(name = "estado_registro", length = 20)
-    private String estadoRegistro;
-
-    public Paciente() {}
-
-    public Paciente(Long id, Usuario usuario, String cedula, String telefono,
-                    String direccion, String tipoSangre, String alergias, String estadoRegistro) {
+    public Usuario(Long id, String nombre, String email, String clave, Rol rol) {
         this.id = id;
-        this.usuario = usuario;
-        this.cedula = cedula;
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.tipoSangre = tipoSangre;
-        this.alergias = alergias;
-        this.estadoRegistro = estadoRegistro;
+        this.nombre = nombre;
+        this.email = email;
+        this.clave = clave;
+        this.rol = rol;
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long idPaciente) {
-        this.id = idPaciente;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getCedula() {
-        return cedula;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getClave() {
+        return clave;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public Rol getRol() {
+        return rol;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 
-    public String getTipoSangre() {
-        return tipoSangre;
+    // --- Métodos de Spring Security ---
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority("ROLE_" + rol.name()));
     }
 
-    public void setTipoSangre(String tipoSangre) {
-        this.tipoSangre = tipoSangre;
+    @Override
+    public String getPassword() {
+        return this.clave;
     }
 
-    public String getAlergias() {
-        return alergias;
+    @Override
+    public String getUsername() {
+        return this.email;
     }
 
-    public void setAlergias(String alergias) {
-        this.alergias = alergias;
+    @Override
+    public boolean isAccountNonExpired() { return true; }
+
+    @Override
+    public boolean isAccountNonLocked() { return true; }
+
+    @Override
+    public boolean isCredentialsNonExpired() { return true; }
+
+    @Override
+    public boolean isEnabled() { return true; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Usuario)) return false;
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(id, usuario.id);
     }
 
-    public String getEstadoRegistro() {
-        return estadoRegistro;
-    }
-
-    public void setEstadoRegistro(String estadoRegistro) {
-        this.estadoRegistro = estadoRegistro;
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
+
