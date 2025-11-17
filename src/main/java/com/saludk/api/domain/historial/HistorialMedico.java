@@ -1,5 +1,6 @@
 package com.saludk.api.domain.historial;
 
+import com.saludk.api.domain.medico.Medico;
 import com.saludk.api.domain.observer.Sujeto;
 import com.saludk.api.domain.paciente.Paciente;
 import jakarta.persistence.*;
@@ -31,8 +32,9 @@ public class HistorialMedico extends Sujeto {
     @Column(columnDefinition = "TEXT")
     private String resultados;
 
-    @Column(name = "medico_responsable", length = 100)
-    private String medicoResponsable;
+    @ManyToOne
+    @JoinColumn(name = "id_medico")
+    private Medico medicoResponsable;
 
     @Column(name = "archivo_url", length = 255)
     private String archivoUrl;
@@ -78,8 +80,8 @@ public class HistorialMedico extends Sujeto {
     public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
     public String getResultados() { return resultados; }
     public void setResultados(String resultados) { this.resultados = resultados; }
-    public String getMedicoResponsable() { return medicoResponsable; }
-    public void setMedicoResponsable(String medicoResponsable) { this.medicoResponsable = medicoResponsable; }
+    public Medico getMedicoResponsable() { return medicoResponsable; }
+    public void setMedicoResponsable(Medico medicoResponsable) { this.medicoResponsable = medicoResponsable; }
     public String getArchivoUrl() { return archivoUrl; }
     public void setArchivoUrl(String archivoUrl) { this.archivoUrl = archivoUrl; }
     public Boolean getValorCritico() { return valorCritico; }
