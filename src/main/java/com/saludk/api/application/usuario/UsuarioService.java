@@ -15,13 +15,15 @@ public class UsuarioService {
 
     private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-    public Usuario crearUsuarioPaciente(String nombre, String email, String clave) {
+    public Usuario crearUsuarioPaciente(String nombre, String apellido, String email, String clave) {
+
         if (usuarioRepository.findByEmail(email).isPresent()) {
             throw new RuntimeException("El correo electrónico ya está registrado.");
         }
 
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
+        usuario.setApellido(apellido);
         usuario.setEmail(email);
         usuario.setClave(encoder.encode(clave));
         usuario.setRol(Rol.PACIENTE);

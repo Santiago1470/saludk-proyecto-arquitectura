@@ -18,7 +18,12 @@ public class RegistroPacienteFacade {
     private PacienteService pacienteService;
 
     public Paciente registrarNuevoPaciente(DatosRegistroPaciente datos) {
-        Usuario usuario = usuarioService.crearUsuarioPaciente(datos.nombre(), datos.email(), datos.clave());
+        Usuario usuario = usuarioService.crearUsuarioPaciente(
+                datos.nombre(),
+                datos.apellido(),
+                datos.email(),
+                datos.clave()
+        );
 
         return pacienteService.registrarPaciente(
                 usuario.getId(),

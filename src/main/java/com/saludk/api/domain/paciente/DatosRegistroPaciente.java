@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 
 public record DatosRegistroPaciente(
         @NotBlank String nombre,
+        @NotBlank String apellido,
         @Email String email,
         @NotBlank String clave,
         @NotBlank String cedula,
