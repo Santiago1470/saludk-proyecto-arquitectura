@@ -44,25 +44,16 @@ public class PacienteController {
         return ResponseEntity.ok(nuevo);
     }
 
-    /**
-     * 🔹 Obtener todos los pacientes
-     */
     @GetMapping
     public ResponseEntity<List<Paciente>> listarPacientes() {
         return ResponseEntity.ok(pacienteService.listarPacientes());
     }
 
-    /**
-     * 🔹 Buscar paciente por cédula
-     */
     @GetMapping("/{cedula}")
     public ResponseEntity<Paciente> obtenerPorCedula(@PathVariable String cedula) {
         return ResponseEntity.ok(pacienteService.obtenerPorCedula(cedula));
     }
 
-    /**
-     * 🔹 Actualizar datos del paciente
-     */
     @PutMapping("/{id}")
     public ResponseEntity<Paciente> actualizarPaciente(
             @PathVariable Long id,
@@ -74,9 +65,6 @@ public class PacienteController {
         return ResponseEntity.ok(pacienteService.actualizarPaciente(id, telefono, direccion, tipoSangre, alergias));
     }
 
-    /**
-     * 🔹 Cambiar estado de registro del paciente
-     */
     @PatchMapping("/{id}/estado")
     public ResponseEntity<Void> cambiarEstado(@PathVariable Long id, @RequestParam String nuevoEstado) {
         pacienteService.cambiarEstado(id, nuevoEstado);

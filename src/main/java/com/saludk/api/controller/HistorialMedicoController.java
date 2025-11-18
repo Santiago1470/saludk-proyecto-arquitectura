@@ -26,7 +26,7 @@ public class HistorialMedicoController {
             @RequestParam String descripcion,
             @RequestParam(required = false) String resultados,
             @RequestParam(defaultValue = "false") boolean valorCritico,
-            @RequestParam(required = false) String medicoResponsable
+            @RequestParam(required = false) Long medicoResponsable
     ) {
         HistorialMedico nuevo = historialService.registrarEvento(idPaciente, tipo, descripcion, resultados, valorCritico, medicoResponsable);
         return ResponseEntity.ok(nuevo);

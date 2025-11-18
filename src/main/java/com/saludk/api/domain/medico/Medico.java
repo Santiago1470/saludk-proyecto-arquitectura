@@ -19,7 +19,7 @@ public class Medico {
     @Column(length = 100)
     private String especialidad;
 
-    @Column(name = "calificacion_promedio", precision = 3, scale = 2)
+    @Column(name = "calificacion_promedio")
     private Double calificacionPromedio = 0.0;
 
     public Medico() {}
