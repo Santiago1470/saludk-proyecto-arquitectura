@@ -34,8 +34,6 @@ public class SolicitudPaciente {
         this.fechaSolicitud = fechaSolicitud;
     }
 
-    // ===== GETTERS Y SETTERS =====
-
     public Long getIdSolicitud() {
         return idSolicitud;
     }
