@@ -30,4 +30,21 @@ public class UsuarioService {
 
         return usuarioRepository.save(usuario);
     }
+
+    public Usuario crearUsuarioMedico(String nombre, String apellido, String email, String clave) {
+
+        if (usuarioRepository.findByEmail(email).isPresent()) {
+            throw new RuntimeException("El correo electrónico ya está registrado.");
+        }
+
+        Usuario usuario = new Usuario();
+        usuario.setNombre(nombre);
+        usuario.setApellido(apellido);
+        usuario.setEmail(email);
+        usuario.setClave(encoder.encode(clave));
+        usuario.setRol(Rol.MEDICO);
+
+        return usuarioRepository.save(usuario);
+    }
+
 }
