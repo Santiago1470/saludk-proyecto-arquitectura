@@ -37,7 +37,7 @@ public class CitaService {
 
         var disponibilidades = disponibilidadRepository
                 .findByMedicoIdAndFecha(medico.getId(), date);
-
+        System.out.println(disponibilidades);
         if (disponibilidades.isEmpty()) {
             throw new RuntimeException("El médico no tiene disponibilidad ese día");
         }

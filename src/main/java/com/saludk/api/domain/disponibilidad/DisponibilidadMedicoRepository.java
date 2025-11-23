@@ -10,4 +10,5 @@ import java.util.List;
 public interface DisponibilidadMedicoRepository extends JpaRepository<DisponibilidadMedico, Long> {
 
     List<DisponibilidadMedico> findByMedicoIdAndFecha(Long idMedico, LocalDate fecha);
+    List<DisponibilidadMedico> findByMedicoId(Long idMedico);
 }
