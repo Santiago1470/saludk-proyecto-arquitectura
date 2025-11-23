@@ -33,7 +33,9 @@ public class CitaService {
         var medico = medicoRepository.findById(datos.idMedico())
                 .orElseThrow(() -> new RuntimeException("Médico no encontrado"));
 
-        LocalDate date = datos.fecha().toLocalDate();
+        LocalDateTime fechaCita = LocalDateTime.of(datos.fecha(), datos.hora());
+
+        LocalDate date = fechaCita.toLocalDate();
 
         var disponibilidades = disponibilidadRepository
                 .findByMedicoIdAndFecha(medico.getId(), date);
@@ -44,8 +46,8 @@ public class CitaService {
 
         boolean horaValida = disponibilidades.stream()
                 .anyMatch(d ->
-                        datos.fecha().toLocalTime().isAfter(d.getHoraInicio()) &&
-                                datos.fecha().toLocalTime().isBefore(d.getHoraFin())
+                        fechaCita.toLocalTime().isAfter(d.getHoraInicio()) &&
+                                fechaCita.toLocalTime().isBefore(d.getHoraFin())
                 );
 
         if (!horaValida) {
@@ -54,8 +56,8 @@ public class CitaService {
 
         var citaExistente = citaRepository.findByMedicoIdAndFechaBetween(
                 medico.getId(),
-                datos.fecha(),
-                datos.fecha().plusMinutes(30) // duración promedio de una cita médica
+                fechaCita,
+                fechaCita.plusMinutes(30) // duración promedio de una cita médica
         );
 
         if (!citaExistente.isEmpty()) {
@@ -65,7 +67,7 @@ public class CitaService {
         Cita cita = new Cita();
         cita.setPaciente(paciente);
         cita.setMedico(medico);
-        cita.setFecha(datos.fecha());
+        cita.setFecha(fechaCita);
         cita.setTipo(datos.tipo());
         cita.setEstado("PROGRAMADA");
 

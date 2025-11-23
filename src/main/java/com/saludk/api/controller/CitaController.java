@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 @RestController
 @RequestMapping("/citas")
 @SecurityRequirement(name = "bearer-key")
-// @Secured("ROLE_PACIENTE")
+@Secured("ROLE_PACIENTE")
 public class CitaController {
 
     @Autowired

@@ -28,6 +28,7 @@ public class SecurityFilter extends OncePerRequestFilter {
         if(authHeader != null) {
             authHeader = authHeader.replace("Bearer ", "");
             var subject = tokenService.getSubject(authHeader);
+            System.out.println(authHeader);
             if(subject != null){
                 var usuario = usuarioRepository.buscarPorCorreo(subject);
                 var authentication = new UsernamePasswordAuthenticationToken(usuario, null,
