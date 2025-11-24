@@ -1,6 +1,7 @@
 package com.saludk.api.domain.paciente;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -13,5 +14,8 @@ public interface PacienteRepository extends JpaRepository<Paciente, Long> {
     Optional<Paciente> findByUsuarioId(Long usuarioId);
 
     Optional<Paciente> findByPacienteId(Long pacienteId);
+
+    @Query("SELECT COUNT(p) FROM Paciente p")
+    Long totalPacientes();
 
 }
