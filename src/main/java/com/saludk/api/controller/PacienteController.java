@@ -1,7 +1,7 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.paciente.PacienteService;
-import com.saludk.api.application.registro.RegistroPacienteFacade;
+import com.saludk.api.domain.paciente.PacienteService;
+import com.saludk.api.domain.registro.RegistroPacienteFacade;
 import com.saludk.api.domain.paciente.Paciente;
 import com.saludk.api.domain.paciente.DatosRegistroPaciente;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;

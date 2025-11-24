@@ -1,8 +1,5 @@
-package com.saludk.api.application.calificacion;
+package com.saludk.api.domain.calificacion;
 
-import com.saludk.api.domain.calificacion.CalificacionMedico;
-import com.saludk.api.domain.calificacion.CalificacionMedicoRepository;
-import com.saludk.api.domain.calificacion.DatosCalificarMedico;
 import com.saludk.api.domain.medico.Medico;
 import com.saludk.api.domain.medico.MedicoRepository;
 import com.saludk.api.domain.paciente.Paciente;

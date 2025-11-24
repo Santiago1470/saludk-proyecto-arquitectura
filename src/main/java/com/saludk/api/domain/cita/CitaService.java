@@ -1,6 +1,5 @@
-package com.saludk.api.application.cita;
+package com.saludk.api.domain.cita;
 
-import com.saludk.api.domain.cita.*;
 import com.saludk.api.domain.disponibilidad.DisponibilidadMedicoRepository;
 import com.saludk.api.domain.medico.MedicoRepository;
 import com.saludk.api.domain.paciente.PacienteRepository;

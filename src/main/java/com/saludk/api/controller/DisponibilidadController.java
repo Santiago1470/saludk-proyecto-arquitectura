@@ -1,13 +1,12 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.disponibilidad.DisponibilidadService;
+import com.saludk.api.domain.disponibilidad.DisponibilidadService;
 import com.saludk.api.domain.disponibilidad.DatosCrearDisponibilidad;
 import com.saludk.api.domain.disponibilidad.DisponibilidadMedico;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

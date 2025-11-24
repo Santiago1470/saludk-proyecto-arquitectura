@@ -1,6 +1,6 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.producto.ProductoService;
+import com.saludk.api.domain.producto.ProductoService;
 import com.saludk.api.domain.producto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

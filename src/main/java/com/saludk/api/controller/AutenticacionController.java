@@ -1,6 +1,6 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.AutenticacionService;
+import com.saludk.api.domain.AutenticacionService;
 import com.saludk.api.domain.usuario.DatosUsuarioAuth;
 import com.saludk.api.infra.security.DatosJWTtoken;
 import jakarta.validation.Valid;

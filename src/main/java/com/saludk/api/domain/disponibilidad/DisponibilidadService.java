@@ -1,8 +1,5 @@
-package com.saludk.api.application.disponibilidad;
+package com.saludk.api.domain.disponibilidad;
 
-import com.saludk.api.domain.disponibilidad.DatosCrearDisponibilidad;
-import com.saludk.api.domain.disponibilidad.DisponibilidadMedico;
-import com.saludk.api.domain.disponibilidad.DisponibilidadMedicoRepository;
 import com.saludk.api.domain.medico.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

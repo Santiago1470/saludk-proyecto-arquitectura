@@ -1,8 +1,5 @@
-package com.saludk.api.application.solicitud;
+package com.saludk.api.domain.solicitud;
 
-import com.saludk.api.domain.solicitud.DatosCrearSolicitud;
-import com.saludk.api.domain.solicitud.SolicitudPaciente;
-import com.saludk.api.domain.solicitud.SolicitudPacienteRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 

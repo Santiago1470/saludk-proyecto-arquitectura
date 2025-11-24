@@ -1,6 +1,6 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.suscripcion.SuscripcionService;
+import com.saludk.api.domain.suscripcion.SuscripcionService;
 import com.saludk.api.domain.suscripcion.DatosCrearSuscripcion;
 import com.saludk.api.domain.suscripcion.SuscripcionPaciente;
 import org.springframework.beans.factory.annotation.Autowired;

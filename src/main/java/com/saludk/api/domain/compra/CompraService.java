@@ -1,7 +1,6 @@
-package com.saludk.api.application.compra;
+package com.saludk.api.domain.compra;
 
 import com.saludk.api.domain.carrito.*;
-import com.saludk.api.domain.compra.*;
 import com.saludk.api.domain.pago.MetodoPago;
 import com.saludk.api.domain.pago.MetodoPagoFactory;
 import com.saludk.api.domain.producto.ProductoRepository;

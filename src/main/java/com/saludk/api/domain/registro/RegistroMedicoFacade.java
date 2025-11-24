@@ -1,7 +1,7 @@
-package com.saludk.api.application.registro;
+package com.saludk.api.domain.registro;
 
-import com.saludk.api.application.medico.MedicoService;
-import com.saludk.api.application.usuario.UsuarioService;
+import com.saludk.api.domain.medico.MedicoService;
+import com.saludk.api.domain.usuario.UsuarioService;
 import com.saludk.api.domain.medico.DatosRegistroMedico;
 import com.saludk.api.domain.medico.Medico;
 import com.saludk.api.domain.usuario.Usuario;

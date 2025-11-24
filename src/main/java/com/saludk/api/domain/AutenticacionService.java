@@ -1,4 +1,4 @@
-package com.saludk.api.application;
+package com.saludk.api.domain;
 
 import com.saludk.api.domain.usuario.Usuario;
 import com.saludk.api.infra.security.TokenService;

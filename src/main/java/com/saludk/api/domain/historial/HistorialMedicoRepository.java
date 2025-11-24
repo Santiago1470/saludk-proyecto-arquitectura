@@ -8,4 +8,5 @@ import java.util.List;
 public interface HistorialMedicoRepository extends JpaRepository<HistorialMedico, Long> {
     List<HistorialMedico> findByPacienteId(Long pacienteId);
     List<HistorialMedico> findByValorCriticoTrue();
+    List<HistorialMedico> findByValorCriticoTrueAndPacienteId(Long pacienteId);
 }

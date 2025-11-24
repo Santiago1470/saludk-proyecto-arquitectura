@@ -1,7 +1,5 @@
-package com.saludk.api.application.calificacion;
+package com.saludk.api.domain.calificacion;
 
-import com.saludk.api.domain.calificacion.CalificacionProducto;
-import com.saludk.api.domain.calificacion.CalificacionProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

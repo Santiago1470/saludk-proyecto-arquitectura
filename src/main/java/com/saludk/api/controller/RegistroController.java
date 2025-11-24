@@ -1,7 +1,7 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.registro.RegistroMedicoFacade;
-import com.saludk.api.application.registro.RegistroPacienteFacade;
+import com.saludk.api.domain.registro.RegistroMedicoFacade;
+import com.saludk.api.domain.registro.RegistroPacienteFacade;
 import com.saludk.api.domain.medico.DatosRegistroMedico;
 import com.saludk.api.domain.medico.Medico;
 import com.saludk.api.domain.paciente.Paciente;

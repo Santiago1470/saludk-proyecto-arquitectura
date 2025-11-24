@@ -1,8 +1,7 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.solicitud.SolicitudPacienteService;
+import com.saludk.api.domain.solicitud.SolicitudPacienteService;
 import com.saludk.api.domain.solicitud.DatosCrearSolicitud;
-import com.saludk.api.domain.solicitud.DatosRespuestaSolicitud;
 import com.saludk.api.domain.solicitud.SolicitudPaciente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,5 @@
-package com.saludk.api.application.paciente;
+package com.saludk.api.domain.paciente;
 
-import com.saludk.api.domain.paciente.Paciente;
-import com.saludk.api.domain.paciente.PacienteRepository;
 import com.saludk.api.domain.usuario.Usuario;
 import com.saludk.api.domain.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;

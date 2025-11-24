@@ -1,7 +1,5 @@
-package com.saludk.api.application.alerta;
+package com.saludk.api.domain.alerta;
 
-import com.saludk.api.domain.alerta.AlertaCritica;
-import com.saludk.api.domain.alerta.AlertaCriticaRepository;
 import com.saludk.api.domain.historial.HistorialMedico;
 import com.saludk.api.domain.historial.HistorialMedicoRepository;
 import org.springframework.stereotype.Service;

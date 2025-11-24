@@ -1,6 +1,6 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.alerta.AlertaCriticaService;
+import com.saludk.api.domain.alerta.AlertaCriticaService;
 import com.saludk.api.domain.alerta.AlertaCritica;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

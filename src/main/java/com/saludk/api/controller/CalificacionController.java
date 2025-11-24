@@ -1,6 +1,6 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.calificacion.CalificacionService;
+import com.saludk.api.domain.calificacion.CalificacionService;
 import com.saludk.api.domain.calificacion.CalificacionDTO;
 import com.saludk.api.domain.calificacion.CalificacionProducto;
 import org.springframework.beans.factory.annotation.Autowired;

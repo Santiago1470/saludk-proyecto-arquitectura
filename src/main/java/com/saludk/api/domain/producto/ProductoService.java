@@ -1,6 +1,5 @@
-package com.saludk.api.application.producto;
+package com.saludk.api.domain.producto;
 
-import com.saludk.api.domain.producto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

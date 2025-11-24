@@ -1,6 +1,5 @@
-package com.saludk.api.application.carrito;
+package com.saludk.api.domain.carrito;
 
-import com.saludk.api.domain.carrito.*;
 import com.saludk.api.domain.producto.Producto;
 import com.saludk.api.domain.producto.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

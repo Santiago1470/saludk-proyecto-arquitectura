@@ -1,6 +1,6 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.compra.CompraService;
+import com.saludk.api.domain.compra.CompraService;
 import com.saludk.api.domain.compra.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

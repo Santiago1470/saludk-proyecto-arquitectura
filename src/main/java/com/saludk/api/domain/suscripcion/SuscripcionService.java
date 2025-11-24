@@ -1,6 +1,5 @@
-package com.saludk.api.application.suscripcion;
+package com.saludk.api.domain.suscripcion;
 
-import com.saludk.api.domain.suscripcion.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

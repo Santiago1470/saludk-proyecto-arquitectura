@@ -1,6 +1,6 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.cita.CitaService;
+import com.saludk.api.domain.cita.CitaService;
 import com.saludk.api.domain.cita.Cita;
 import com.saludk.api.domain.cita.DatosCrearCita;
 import com.saludk.api.domain.cita.DatosRespuestaCita;

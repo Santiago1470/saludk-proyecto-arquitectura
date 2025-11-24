@@ -1,8 +1,5 @@
-package com.saludk.api.application.usuario;
+package com.saludk.api.domain.usuario;
 
-import com.saludk.api.domain.usuario.Rol;
-import com.saludk.api.domain.usuario.Usuario;
-import com.saludk.api.domain.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

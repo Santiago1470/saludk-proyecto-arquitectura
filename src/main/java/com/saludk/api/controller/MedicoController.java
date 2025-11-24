@@ -1,6 +1,6 @@
 package com.saludk.api.controller;
 
-import com.saludk.api.application.medico.MedicoService;
+import com.saludk.api.domain.medico.MedicoService;
 import com.saludk.api.domain.medico.Medico;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.ResponseEntity;
