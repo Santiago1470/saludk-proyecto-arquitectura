@@ -23,7 +23,7 @@ Su objetivo es digitalizar la atención médica, garantizando seguridad, eficien
 
 - **Frontend:** Angular  
 - **Backend:** Spring Boot (Java)  
-- **Base de datos:** SQL Server  
+- **Base de datos:** MySQL  
 - **Autenticación:** JWT (JSON Web Tokens)  
 - **Arquitectura:** API RESTful  
 - **Notificaciones:** comunicación asíncrona (colas de mensajería)  
