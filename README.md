@@ -21,7 +21,7 @@ Su objetivo es digitalizar la atención médica, garantizando seguridad, eficien
 
 ## 🧱 **Arquitectura y Tecnologías**
 
-- **Frontend:** React.js  
+- **Frontend:** Angular  
 - **Backend:** Spring Boot (Java)  
 - **Base de datos:** SQL Server  
 - **Autenticación:** JWT (JSON Web Tokens)  
