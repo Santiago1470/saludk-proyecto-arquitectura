@@ -1,5 +1,6 @@
 package com.saludk.api.controller;
 
+import com.saludk.api.domain.paciente.PacienteDTO;
 import com.saludk.api.domain.registro.RegistroMedicoFacade;
 import com.saludk.api.domain.registro.RegistroPacienteFacade;
 import com.saludk.api.domain.medico.DatosRegistroMedico;
@@ -25,10 +26,10 @@ public class RegistroController {
     private RegistroMedicoFacade registroMedicoFacade;
 
     @PostMapping("/paciente")
-    public ResponseEntity<Paciente> registrarNuevoPaciente(
+    public ResponseEntity<PacienteDTO> registrarNuevoPaciente(
             @Valid @RequestBody DatosRegistroPaciente datos) {
 
-        Paciente paciente = registroPacienteFacade.registrarNuevoPaciente(datos);
+        PacienteDTO paciente = registroPacienteFacade.registrarNuevoPaciente(datos);
         return ResponseEntity.ok(paciente);
     }
 

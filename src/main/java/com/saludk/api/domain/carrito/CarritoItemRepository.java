@@ -10,9 +10,4 @@ import java.util.List;
 public interface CarritoItemRepository extends JpaRepository<CarritoItem, Long> {
     List<CarritoItem> findByIdCarrito(Long idCarrito);
     void deleteByIdCarritoAndIdProducto(Long idCarrito, Long idProducto);
-
-    @Query("SELECT p.nombre AS producto, SUM(i.cantidad) AS total " +
-            "FROM CompraItem i JOIN i.producto p " +
-            "GROUP BY p.id ORDER BY total DESC")
-    List<Object[]> kpiProductosMasVendidos();
 }

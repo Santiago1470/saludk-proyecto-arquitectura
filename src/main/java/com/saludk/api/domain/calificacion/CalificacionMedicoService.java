@@ -21,7 +21,7 @@ public class CalificacionMedicoService {
     @Autowired
     private PacienteRepository pacienteRepo;
 
-    public CalificacionMedico calificar(DatosCalificarMedico datos) {
+    public DatosCalificarMedico calificar(DatosCalificarMedico datos) {
 
         Paciente paciente = pacienteRepo.findById(datos.idPaciente())
                 .orElseThrow(() -> new RuntimeException("Paciente no encontrado"));
@@ -41,7 +41,10 @@ public class CalificacionMedicoService {
 
         recalcularPromedio(medico);
 
-        return calificacion;
+        return new DatosCalificarMedico(calificacion.getMedico().getId(),
+                calificacion.getPaciente().getId(),
+                calificacion.getPuntaje(),
+                calificacion.getComentario());
     }
 
     private void recalcularPromedio(Medico medico) {

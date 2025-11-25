@@ -3,12 +3,14 @@ package com.saludk.api.controller;
 import com.saludk.api.domain.calificacion.CalificacionService;
 import com.saludk.api.domain.calificacion.CalificacionDTO;
 import com.saludk.api.domain.calificacion.CalificacionProducto;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/calificaciones")
+@SecurityRequirement(name = "bearer-key")
 public class CalificacionController {
 
     @Autowired

@@ -3,12 +3,14 @@ package com.saludk.api.controller;
 import com.saludk.api.domain.suscripcion.SuscripcionService;
 import com.saludk.api.domain.suscripcion.DatosCrearSuscripcion;
 import com.saludk.api.domain.suscripcion.SuscripcionPaciente;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/suscripcion")
+@SecurityRequirement(name = "bearer-key")
 public class SuscripcionController {
 
     @Autowired

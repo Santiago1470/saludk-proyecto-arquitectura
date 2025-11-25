@@ -2,6 +2,7 @@ package com.saludk.api.controller;
 
 import com.saludk.api.domain.carrito.CarritoService;
 import com.saludk.api.domain.carrito.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/carrito")
+@SecurityRequirement(name = "bearer-key")
 public class CarritoController {
 
     @Autowired

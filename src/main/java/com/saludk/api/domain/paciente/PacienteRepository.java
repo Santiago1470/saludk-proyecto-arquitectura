@@ -13,7 +13,7 @@ public interface PacienteRepository extends JpaRepository<Paciente, Long> {
 
     Optional<Paciente> findByUsuarioId(Long usuarioId);
 
-    Optional<Paciente> findByPacienteId(Long pacienteId);
+    Optional<Paciente> findById(Long id);
 
     @Query("SELECT COUNT(p) FROM Paciente p")
     Long totalPacientes();

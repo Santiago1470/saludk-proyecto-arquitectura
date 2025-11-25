@@ -40,6 +40,7 @@ public class CompraService {
         Compra compra = new Compra();
         compra.setIdPaciente(idPaciente);
         compra.setMetodoPago(metodoPago);
+        compra.setTotal(0.0);
         compra = compraRepo.save(compra);
 
         for (CarritoItem ci : items) {

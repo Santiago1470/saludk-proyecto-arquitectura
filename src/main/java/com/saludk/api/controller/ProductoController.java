@@ -2,6 +2,7 @@ package com.saludk.api.controller;
 
 import com.saludk.api.domain.producto.ProductoService;
 import com.saludk.api.domain.producto.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/productos")
+@SecurityRequirement(name = "bearer-key")
 public class ProductoController {
 
     @Autowired
@@ -24,6 +26,7 @@ public class ProductoController {
 
     @GetMapping
     public ResponseEntity<List<ProductoDTO>> listar() {
+        System.out.println("Aqui entre en producto");
         var list = service.listar().stream().map(ProductoDTO::from).collect(Collectors.toList());
         return ResponseEntity.ok(list);
     }

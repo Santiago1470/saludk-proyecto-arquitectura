@@ -19,7 +19,25 @@ public class AlertaCriticaService {
         this.historialRepo = historialRepo;
     }
 
-    public AlertaCritica crearAlerta(Long idHistorial, String nivel, String descripcion) {
+    private AlertaCriticaDTO convertirADTO(AlertaCritica alerta) {
+        var historial = alerta.getHistorial();
+        var paciente = historial.getPaciente();
+        var usuario = paciente.getUsuario();
+
+        return new AlertaCriticaDTO(
+                alerta.getId(),
+                alerta.getNivel(),
+                alerta.getDescripcion(),
+                alerta.getEstado(),
+                alerta.getFechaCreacion(),
+                alerta.getFechaResolucion(),
+                historial.getId(),
+                paciente.getId(),
+                usuario.getId()
+        );
+    }
+
+    public AlertaCriticaDTO crearAlerta(Long idHistorial, String nivel, String descripcion) {
         HistorialMedico historial = historialRepo.findById(idHistorial)
                 .orElseThrow(() -> new RuntimeException("Historial no encontrado"));
 
@@ -29,20 +47,27 @@ public class AlertaCriticaService {
         alerta.setDescripcion(descripcion);
         alerta.setEstado("ACTIVA");
 
-        return alertaRepo.save(alerta);
+        AlertaCritica guardada = alertaRepo.save(alerta);
+
+        return convertirADTO(guardada);
     }
 
-    public AlertaCritica resolverAlerta(Long idAlerta) {
+    public AlertaCriticaDTO resolverAlerta(Long idAlerta) {
         AlertaCritica alerta = alertaRepo.findById(idAlerta)
                 .orElseThrow(() -> new RuntimeException("Alerta no encontrada"));
 
         alerta.setEstado("RESUELTA");
         alerta.setFechaResolucion(LocalDateTime.now());
 
-        return alertaRepo.save(alerta);
+        AlertaCritica guardada = alertaRepo.save(alerta);
+
+        return convertirADTO(guardada);
     }
 
-    public List<AlertaCritica> obtenerAlertasActivas() {
-        return alertaRepo.findByEstado("ACTIVA");
+    public List<AlertaCriticaDTO> obtenerAlertasActivas() {
+        return alertaRepo.findByEstado("ACTIVA")
+                .stream()
+                .map(this::convertirADTO)
+                .toList();
     }
 }

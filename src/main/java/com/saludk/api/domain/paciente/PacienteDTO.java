@@ -11,4 +11,7 @@ public record PacienteDTO(
         String alergias,
         String estadoRegistro,
         UsuarioDTO usuario
-) {}
+) {
+    public PacienteDTO {
+    }
+}

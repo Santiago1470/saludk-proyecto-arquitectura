@@ -86,7 +86,7 @@ public class HistorialMedicoService {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         Long idLogueado = ((Usuario)auth.getPrincipal()).getId();
-        Paciente paciente = pacienteRepository.findByPacienteId(idPaciente)
+        Paciente paciente = pacienteRepository.findById(idPaciente)
                 .orElseThrow(() -> new RuntimeException("Paciente no encontrado con id: " + idPaciente));
 
         if (!idLogueado.equals(paciente.getUsuario().getId())) {

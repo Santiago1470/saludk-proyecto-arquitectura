@@ -1,5 +1,6 @@
 package com.saludk.api.domain.registro;
 
+import com.saludk.api.domain.paciente.PacienteDTO;
 import com.saludk.api.domain.paciente.PacienteService;
 import com.saludk.api.domain.usuario.UsuarioService;
 import com.saludk.api.domain.paciente.Paciente;
@@ -17,7 +18,7 @@ public class RegistroPacienteFacade {
     @Autowired
     private PacienteService pacienteService;
 
-    public Paciente registrarNuevoPaciente(DatosRegistroPaciente datos) {
+    public PacienteDTO registrarNuevoPaciente(DatosRegistroPaciente datos) {
         Usuario usuario = usuarioService.crearUsuarioPaciente(
                 datos.nombre(),
                 datos.apellido(),
